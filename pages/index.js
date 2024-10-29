@@ -1,4 +1,5 @@
 import React from 'react';
+import Layout from '../components/Layout';
 import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList } from 'recharts';
 
 const data = [
@@ -15,8 +16,8 @@ export default function Home() {
   const formatLabel = (value) => `$${Math.round(value/100)/10}k`;
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Revenue vs Labor Dashboard</h1>
+    <Layout>
+      <h1 style={{ marginBottom: '20px' }}>Revenue vs Labor Dashboard</h1>
       <div style={{ height: '500px', width: '100%' }}>
         <ResponsiveContainer>
           <ComposedChart data={data}>
@@ -53,6 +54,6 @@ export default function Home() {
           </ComposedChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </Layout>
   );
 }
