@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList } from 'recharts';
 
 const data = [
   { week: '22/9', barLabor: 1022, floorLabor: 3335, revenue: 21785 },
@@ -12,6 +12,7 @@ const data = [
 
 export default function Home() {
   const formatCurrency = (value) => `$${value.toLocaleString()}`;
+  const formatLabel = (value) => `$${Math.round(value/100)/10}k`;
 
   return (
     <div style={{ padding: '20px' }}>
@@ -21,12 +22,34 @@ export default function Home() {
           <ComposedChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="week" />
-            <YAxis tickFormatter={value => `$${value/1000}k`} />
+            <YAxis 
+              domain={[0, 30000]}
+              tickFormatter={value => `$${value/1000}k`}
+            />
             <Tooltip formatter={formatCurrency} />
             <Legend />
-            <Bar dataKey="barLabor" name="Bar Labor" stackId="labor" fill="#8884d8" />
-            <Bar dataKey="floorLabor" name="Floor Labor" stackId="labor" fill="#82ca9d" />
-            <Line type="monotone" dataKey="revenue" name="Revenue" stroke="#ff7300" />
+            <Bar dataKey="barLabor" name="Bar Labor" stackId="labor" fill="#8884d8">
+              <LabelList dataKey="barLabor" position="inside" formatter={formatCurrency} fill="white" />
+            </Bar>
+            <Bar dataKey="floorLabor" name="Floor Labor" stackId="labor" fill="#82ca9d">
+              <LabelList dataKey="floorLabor" position="inside" formatter={formatCurrency} fill="white" />
+            </Bar>
+            <Line 
+              type="monotone" 
+              dataKey="revenue" 
+              name="Revenue" 
+              stroke="#ff7300"
+              strokeWidth={2}
+              dot={{ strokeWidth: 2 }}
+            >
+              <LabelList 
+                dataKey="revenue" 
+                position="top" 
+                formatter={formatCurrency}
+                fill="#ff7300"
+                offset={10}
+              />
+            </Line>
           </ComposedChart>
         </ResponsiveContainer>
       </div>
