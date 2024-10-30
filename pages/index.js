@@ -8,7 +8,8 @@ const data = [
   { week: '6/10', barLabor: 709, floorLabor: 2637, revenue: 21555 },
   { week: '13/10', barLabor: 1259, floorLabor: 3799, revenue: 26139 },
   { week: '20/10', barLabor: 1272, floorLabor: 2843, revenue: 24238 },
-  { week: '27/10', barLabor: 1126, floorLabor: 2504, revenue: 19470, projectedRevenue: 17900 }
+  { week: '27/10', barLabor: 1126, floorLabor: 2504, revenue: 19470 },
+  { week: '3/11', projectedRevenue: 17900 }
 ];
 
 export default function Home() {
