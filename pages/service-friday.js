@@ -68,7 +68,9 @@ export default function ServiceAnalysis() {
               angle={-45} 
               textAnchor="end"
               height={60}
-              interval={2}
+              interval={(index) => index % 2 === 0}  // Show every second label (30-min intervals)
+              tickFormatter={(time) => time}  // Keep the original time format
+            />
             />
             <YAxis 
               yAxisId="left"
