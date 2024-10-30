@@ -5,9 +5,9 @@ import { useRouter } from 'next/router';
 const Layout = ({ children }) => {
   const router = useRouter();
   
-  const menuItems = [
+ const menuItems = [
     { path: '/', label: 'Revenue vs Labor' },
-    { path: '/covers', label: 'Covers Analysis' }
+    { path: '/service', label: 'Covers vs Staff' }
   ];
 
   return (
