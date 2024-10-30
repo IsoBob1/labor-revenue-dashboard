@@ -69,8 +69,7 @@ export default function ServiceAnalysis() {
               textAnchor="end"
               height={60}
             />
-            />
-            <YAxis 
+              <YAxis 
               yAxisId="left"
               label={{ value: 'Covers', angle: -90, position: 'insideLeft' }}
             />
