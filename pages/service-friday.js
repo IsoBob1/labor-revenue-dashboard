@@ -63,13 +63,11 @@ export default function ServiceAnalysis() {
         <ResponsiveContainer width="100%" height={500}>
           <ComposedChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 30 }}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis 
+             <XAxis 
               dataKey="time" 
               angle={-45} 
               textAnchor="end"
               height={60}
-              interval={(index) => index % 2 === 0}  // Show every second label (30-min intervals)
-              tickFormatter={(time) => time}  // Keep the original time format
             />
             />
             <YAxis 
