@@ -1,103 +1,120 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList } from 'recharts';
+import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
-  { time: '14:00', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 0 }, // Nicola starts
-  { time: '14:15', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 0 },
-  { time: '14:30', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 0 },
-  { time: '14:45', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 0 },
-  { time: '15:00', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 0 },
-  { time: '15:15', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 0 },
-  { time: '15:30', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 0 },
-  { time: '15:45', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 0 },
-  { time: '16:00', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 1 }, // Kieran starts
-  { time: '16:15', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 1 },
-  { time: '16:30', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 1 },
-  { time: '16:45', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 1 },
-  { time: '17:00', arriving: 4, inVenue: 4, floorStaff: 1, barStaff: 1 },
-  { time: '17:15', arriving: 0, inVenue: 4, floorStaff: 1, barStaff: 1 },
-  { time: '17:30', arriving: 0, inVenue: 4, floorStaff: 2, barStaff: 1 }, // Aurelie starts
-  { time: '17:45', arriving: 2, inVenue: 6, floorStaff: 2, barStaff: 1 },
-  { time: '18:00', arriving: 10, inVenue: 16, floorStaff: 3, barStaff: 1 }, // Will starts
-  { time: '18:15', arriving: 0, inVenue: 16, floorStaff: 4, barStaff: 1 }, // Elias starts
-  { time: '18:30', arriving: 9, inVenue: 25, floorStaff: 4, barStaff: 1 },
-  { time: '18:45', arriving: 0, inVenue: 25, floorStaff: 4, barStaff: 1 },
-  { time: '19:00', arriving: 2, inVenue: 23, floorStaff: 4, barStaff: 1 },
-  { time: '19:15', arriving: 6, inVenue: 29, floorStaff: 4, barStaff: 1 },
-  { time: '19:30', arriving: 2, inVenue: 31, floorStaff: 4, barStaff: 1 },
-  { time: '19:45', arriving: 0, inVenue: 25, floorStaff: 4, barStaff: 1 },
-  { time: '20:00', arriving: 0, inVenue: 21, floorStaff: 4, barStaff: 1 },
-  { time: '20:15', arriving: 0, inVenue: 21, floorStaff: 4, barStaff: 1 },
-  { time: '20:30', arriving: 0, inVenue: 10, floorStaff: 3, barStaff: 1 },
-  { time: '20:45', arriving: 0, inVenue: 10, floorStaff: 3, barStaff: 1 },
-  { time: '21:00', arriving: 0, inVenue: 10, floorStaff: 2, barStaff: 1 },
-  { time: '21:15', arriving: 0, inVenue: 2, floorStaff: 1, barStaff: 1 },
-  { time: '21:30', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 1 },
-  { time: '21:45', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 0 },
-  { time: '22:00', arriving: 0, inVenue: 0, floorStaff: 1, barStaff: 0 }
+  { time: '14:00', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '14:15', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '14:30', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '14:45', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '15:00', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '15:15', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '15:30', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '15:45', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '16:00', floorStaff: 1, barStaff: 1, covers: 0 },
+  { time: '16:15', floorStaff: 1, barStaff: 1, covers: 0 },
+  { time: '16:30', floorStaff: 1, barStaff: 1, covers: 0 },
+  { time: '16:45', floorStaff: 1, barStaff: 1, covers: 0 },
+  { time: '17:00', floorStaff: 1, barStaff: 1, covers: 4 },
+  { time: '17:15', floorStaff: 1, barStaff: 1, covers: 4 },
+  { time: '17:30', floorStaff: 2, barStaff: 1, covers: 4 },
+  { time: '17:45', floorStaff: 2, barStaff: 1, covers: 6 },
+  { time: '18:00', floorStaff: 3, barStaff: 1, covers: 16 },
+  { time: '18:15', floorStaff: 4, barStaff: 1, covers: 16 },
+  { time: '18:30', floorStaff: 4, barStaff: 1, covers: 25 },
+  { time: '18:45', floorStaff: 4, barStaff: 1, covers: 25 },
+  { time: '19:00', floorStaff: 4, barStaff: 1, covers: 23 },
+  { time: '19:15', floorStaff: 4, barStaff: 1, covers: 29 },
+  { time: '19:30', floorStaff: 4, barStaff: 1, covers: 31 },
+  { time: '19:45', floorStaff: 4, barStaff: 1, covers: 25 },
+  { time: '20:00', floorStaff: 4, barStaff: 1, covers: 21 },
+  { time: '20:15', floorStaff: 4, barStaff: 1, covers: 21 },
+  { time: '20:30', floorStaff: 3, barStaff: 1, covers: 10 },
+  { time: '20:45', floorStaff: 3, barStaff: 1, covers: 10 },
+  { time: '21:00', floorStaff: 2, barStaff: 1, covers: 10 },
+  { time: '21:15', floorStaff: 1, barStaff: 1, covers: 2 },
+  { time: '21:30', floorStaff: 1, barStaff: 1, covers: 0 },
+  { time: '21:45', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '22:00', floorStaff: 1, barStaff: 0, covers: 0 }
 ];
 
 export default function ServiceAnalysis() {
   return (
     <Layout>
-      <h1 style={{ marginBottom: '20px' }}>Frenchie - Thursday 24 October - Covers vs. Staff</h1>
-      <div style={{ height: '500px', width: '100%' }}>
-        <ResponsiveContainer>
-          <ComposedChart data={data}>
+      <h1 style={{ marginBottom: '20px' }}>Frenchie - Thursday 24 October - FOH Staffing Analysis</h1>
+      
+      {/* Chart Section */}
+      <div style={{ width: '1000px', margin: '0 auto', marginBottom: '40px' }}>
+        <ResponsiveContainer width="100%" height={500}>
+          <ComposedChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 30 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis 
               dataKey="time" 
-              interval={2}
+              angle={-45} 
+              textAnchor="end"
+              height={60}
             />
             <YAxis 
-              yAxisId="left" 
+              yAxisId="left"
               label={{ value: 'Covers', angle: -90, position: 'insideLeft' }}
-              domain={[0, 35]}
             />
             <YAxis 
               yAxisId="right" 
-              orientation="right" 
+              orientation="right"
               label={{ value: 'Staff Count', angle: 90, position: 'insideRight' }}
-              domain={[0, 6]}
             />
             <Tooltip />
             <Legend />
-            <Bar 
-              yAxisId="right"
-              dataKey="floorStaff" 
-              name="Floor Staff" 
-              fill="#82ca9d"
-              stackId="staff"
-            >
-              <LabelList dataKey="floorStaff" position="inside" fill="white" />
-            </Bar>
-            <Bar 
-              yAxisId="right"
-              dataKey="barStaff" 
-              name="Bar Staff" 
-              fill="#8884d8"
-              stackId="staff"
-            >
-              <LabelList dataKey="barStaff" position="inside" fill="white" />
-            </Bar>
+            <Bar yAxisId="right" dataKey="floorStaff" stackId="staff" name="Floor Staff" fill="#82ca9d" />
+            <Bar yAxisId="right" dataKey="barStaff" stackId="staff" name="Bar Staff" fill="#ffc658" />
             <Line 
               yAxisId="left"
-              type="monotone" 
-              dataKey="inVenue" 
-              name="Covers in Venue" 
-              stroke="#ff7300"
-              strokeWidth={2}
-              dot={{ r: 3 }}
-            >
-              <LabelList 
-                dataKey="inVenue" 
-                position="top"
-                offset={10}
-              />
-            </Line>
+              type="monotone"
+              dataKey="covers"
+              stroke="#8884d8"
+              strokeWidth={3}
+              dot={{ r: 4 }}
+              name="Covers in Venue"
+            />
           </ComposedChart>
         </ResponsiveContainer>
+      </div>
+
+      {/* Analysis Table */}
+      <div style={{ width: '1000px', margin: '0 auto', overflowX: 'auto' }}>
+        <h2 style={{ marginBottom: '20px' }}>Service Capacity Analysis</h2>
+        <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '40px' }}>
+          <thead>
+            <tr>
+              <th style={{ padding: '8px', border: '1px solid #ddd', backgroundColor: '#f4f4f4' }}>Time</th>
+              <th style={{ padding: '8px', border: '1px solid #ddd', backgroundColor: '#f4f4f4' }}>Total FOH Staff</th>
+              <th style={{ padding: '8px', border: '1px solid #ddd', backgroundColor: '#f4f4f4' }}>Covers in Venue</th>
+              <th style={{ padding: '8px', border: '1px solid #ddd', backgroundColor: '#f4f4f4' }}>Covers per Staff</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((row) => {
+              const totalStaff = row.floorStaff + row.barStaff;
+              const coversPerStaff = totalStaff ? (row.covers / totalStaff).toFixed(1) : 0;
+              let backgroundColor = 'white';
+              
+              if (totalStaff && row.covers === 0) {
+                backgroundColor = '#fff3e0'; // Orange for staff but no covers
+              } else if (coversPerStaff > 20) {
+                backgroundColor = '#ffebee'; // Red for high covers per staff
+              }
+
+              return (
+                <tr key={row.time} style={{ backgroundColor }}>
+                  <td style={{ padding: '8px', border: '1px solid #ddd' }}>{row.time}</td>
+                  <td style={{ padding: '8px', border: '1px solid #ddd' }}>{totalStaff}</td>
+                  <td style={{ padding: '8px', border: '1px solid #ddd' }}>{row.covers}</td>
+                  <td style={{ padding: '8px', border: '1px solid #ddd' }}>{coversPerStaff}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </Layout>
   );
