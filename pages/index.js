@@ -8,7 +8,7 @@ const data = [
   { week: '6/10', barLabor: 709, floorLabor: 2637, revenue: 21555 },
   { week: '13/10', barLabor: 1259, floorLabor: 3799, revenue: 26139 },
   { week: '20/10', barLabor: 1272, floorLabor: 2843, revenue: 24238 },
-  { week: '27/10', barLabor: 1126, floorLabor: 2504, revenue: 19470 }
+  { week: '27/10', barLabor: 1126, floorLabor: 2504, revenue: 19470, projectedRevenue: 17900 }
 ];
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
             />
             <Tooltip formatter={formatCurrency} />
             <Legend />
-          <Bar dataKey="floorLabor" name="Floor Labor" stackId="labor" fill="#82ca9d">
+            <Bar dataKey="floorLabor" name="Floor Labor" stackId="labor" fill="#82ca9d">
               <LabelList dataKey="floorLabor" position="inside" formatter={formatCurrency} fill="white" />
             </Bar>
             <Bar dataKey="barLabor" name="Bar Labor" stackId="labor" fill="#8884d8">
@@ -38,7 +38,7 @@ export default function Home() {
             <Line 
               type="monotone" 
               dataKey="revenue" 
-              name="Revenue" 
+              name="Actual Revenue" 
               stroke="#ff7300"
               strokeWidth={2}
               dot={{ strokeWidth: 2 }}
@@ -48,6 +48,22 @@ export default function Home() {
                 position="top" 
                 formatter={formatCurrency}
                 fill="#ff7300"
+                offset={10}
+              />
+            </Line>
+            <Line 
+              type="monotone" 
+              dataKey="projectedRevenue" 
+              name="Projected Revenue" 
+              stroke="#ff0000"
+              strokeWidth={2}
+              dot={{ strokeWidth: 2 }}
+            >
+              <LabelList 
+                dataKey="projectedRevenue" 
+                position="top" 
+                formatter={formatCurrency}
+                fill="#ff0000"
                 offset={10}
               />
             </Line>
