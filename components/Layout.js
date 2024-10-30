@@ -11,15 +11,20 @@ const Layout = ({ children }) => {
   ];
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh' }}>
+    <div style={{ 
+      display: 'flex', 
+      minHeight: '100vh',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+    }}>
       {/* Sidebar */}
       <div style={{ 
         width: '250px', 
         backgroundColor: '#1a1a1a', 
         padding: '20px',
-        color: 'white'
+        color: 'white',
+        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
       }}>
-        <h2 style={{ marginBottom: '20px', color: 'white' }}>Dashboard</h2>
+        <h2 style={{ marginBottom: '20px', color: 'white', fontWeight: '500' }}>Dashboard</h2>
         <nav>
           {menuItems.map((item) => (
             <Link 
@@ -32,7 +37,8 @@ const Layout = ({ children }) => {
                 backgroundColor: router.pathname === item.path ? '#333' : 'transparent',
                 color: 'white',
                 textDecoration: 'none',
-                borderRadius: '4px'
+                borderRadius: '4px',
+                fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
               }}
             >
               {item.label}
@@ -42,7 +48,11 @@ const Layout = ({ children }) => {
       </div>
 
       {/* Main content */}
-      <div style={{ flex: 1, padding: '20px' }}>
+      <div style={{ 
+        flex: 1, 
+        padding: '20px',
+        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+      }}>
         {children}
       </div>
     </div>
