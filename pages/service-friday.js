@@ -3,11 +3,11 @@ import Layout from '../components/Layout';
 import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
-  { time: '11:00', floorStaff: 1, barStaff: 1, covers: 0 }, // Nicola + Brianna
+  { time: '11:00', floorStaff: 1, barStaff: 1, covers: 0 },
   { time: '11:15', floorStaff: 1, barStaff: 1, covers: 0 },
   { time: '11:30', floorStaff: 1, barStaff: 1, covers: 0 },
   { time: '11:45', floorStaff: 1, barStaff: 1, covers: 2 },
-  { time: '12:00', floorStaff: 1, barStaff: 2, covers: 6 },  // Kieran starts
+  { time: '12:00', floorStaff: 1, barStaff: 2, covers: 6 },
   { time: '12:15', floorStaff: 1, barStaff: 2, covers: 8 },
   { time: '12:30', floorStaff: 1, barStaff: 2, covers: 8 },
   { time: '12:45', floorStaff: 1, barStaff: 2, covers: 10 },
@@ -19,7 +19,7 @@ const data = [
   { time: '14:15', floorStaff: 1, barStaff: 2, covers: 9 },
   { time: '14:30', floorStaff: 1, barStaff: 2, covers: 7 },
   { time: '14:45', floorStaff: 1, barStaff: 2, covers: 5 },
-  { time: '15:00', floorStaff: 1, barStaff: 1, covers: 0 },  // Kieran ends
+  { time: '15:00', floorStaff: 1, barStaff: 1, covers: 0 },
   { time: '15:15', floorStaff: 1, barStaff: 1, covers: 0 },
   { time: '15:30', floorStaff: 1, barStaff: 1, covers: 0 },
   { time: '15:45', floorStaff: 1, barStaff: 1, covers: 0 },
@@ -28,11 +28,11 @@ const data = [
   { time: '16:45', floorStaff: 1, barStaff: 1, covers: 0 },
   { time: '17:00', floorStaff: 1, barStaff: 1, covers: 0 },
   { time: '17:15', floorStaff: 1, barStaff: 1, covers: 2 },
-  { time: '17:30', floorStaff: 2, barStaff: 1, covers: 9 },  // Neve starts
+  { time: '17:30', floorStaff: 2, barStaff: 1, covers: 9 },
   { time: '17:45', floorStaff: 2, barStaff: 1, covers: 14 },
   { time: '18:00', floorStaff: 2, barStaff: 1, covers: 14 },
-  { time: '18:15', floorStaff: 3, barStaff: 1, covers: 14 }, // Will starts
-  { time: '18:30', floorStaff: 4, barStaff: 1, covers: 23 }, // Elias starts
+  { time: '18:15', floorStaff: 3, barStaff: 1, covers: 14 },
+  { time: '18:30', floorStaff: 4, barStaff: 1, covers: 23 },
   { time: '18:45', floorStaff: 4, barStaff: 1, covers: 29 },
   { time: '19:00', floorStaff: 4, barStaff: 1, covers: 35 },
   { time: '19:15', floorStaff: 4, barStaff: 1, covers: 37 },
@@ -42,15 +42,15 @@ const data = [
   { time: '20:15', floorStaff: 4, barStaff: 1, covers: 32 },
   { time: '20:30', floorStaff: 4, barStaff: 1, covers: 26 },
   { time: '20:45', floorStaff: 4, barStaff: 1, covers: 24 },
-  { time: '21:00', floorStaff: 3, barStaff: 1, covers: 12 }, // Elias ends
+  { time: '21:00', floorStaff: 3, barStaff: 1, covers: 12 },
   { time: '21:15', floorStaff: 3, barStaff: 1, covers: 12 },
   { time: '21:30', floorStaff: 3, barStaff: 1, covers: 6 },
   { time: '21:45', floorStaff: 3, barStaff: 1, covers: 6 },
   { time: '22:00', floorStaff: 3, barStaff: 1, covers: 4 },
-  { time: '22:15', floorStaff: 2, barStaff: 0, covers: 4 }, // Brianna ends
-  { time: '22:30', floorStaff: 2, barStaff: 0, covers: 0 }, // Will and Neve end
+  { time: '22:15', floorStaff: 2, barStaff: 0, covers: 4 },
+  { time: '22:30', floorStaff: 2, barStaff: 0, covers: 0 },
   { time: '22:45', floorStaff: 1, barStaff: 0, covers: 0 },
-  { time: '23:00', floorStaff: 0, barStaff: 0, covers: 0 }  // Nicola ends
+  { time: '23:00', floorStaff: 0, barStaff: 0, covers: 0 }
 ];
 
 export default function ServiceAnalysis() {
@@ -63,13 +63,14 @@ export default function ServiceAnalysis() {
         <ResponsiveContainer width="100%" height={500}>
           <ComposedChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 30 }}>
             <CartesianGrid strokeDasharray="3 3" />
-             <XAxis 
+            <XAxis 
               dataKey="time" 
               angle={-45} 
               textAnchor="end"
               height={60}
+              interval={2}
             />
-              <YAxis 
+            <YAxis 
               yAxisId="left"
               label={{ value: 'Covers', angle: -90, position: 'insideLeft' }}
             />
