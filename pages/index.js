@@ -8,13 +8,18 @@ const data = [
   { week: '6/10', barLabor: 709, floorLabor: 2637, revenue: 21555 },
   { week: '13/10', barLabor: 1259, floorLabor: 3799, revenue: 26139 },
   { week: '20/10', barLabor: 1272, floorLabor: 2843, revenue: 24238 },
-  { week: '27/10', barLabor: 1126, floorLabor: 2504, revenue: 19470, projection: 19470 },
-  { week: '3/11', projection: 17900 }
+  { week: '27/10', barLabor: 1126, floorLabor: 2504, revenue: 19470 },
+  { week: '3/11', revenue: 17900 }
 ];
 
 export default function Home() {
   const formatCurrency = (value) => `$${value.toLocaleString()}`;
-  const formatLabel = (value) => `$${Math.round(value/100)/10}k`;
+  const formatLabel = (value, entry) => {
+    if (entry.payload.week === '3/11') {
+      return <tspan style={{ fill: '#ff0000' }}>${value.toLocaleString()}</tspan>;
+    }
+    return <tspan style={{ fill: '#ff7300' }}>${value.toLocaleString()}</tspan>;
+  };
 
   return (
     <Layout>
@@ -39,32 +44,24 @@ export default function Home() {
             <Line 
               type="monotone" 
               dataKey="revenue" 
-              name="Actual Revenue" 
+              name="Revenue" 
               stroke="#ff7300"
               strokeWidth={2}
-              dot={{ strokeWidth: 2 }}
+              dot={(props) => (
+                <circle
+                  cx={props.cx}
+                  cy={props.cy}
+                  r={4}
+                  fill={props.payload.week === '3/11' ? '#ff0000' : '#ff7300'}
+                  stroke={props.payload.week === '3/11' ? '#ff0000' : '#ff7300'}
+                  strokeWidth={2}
+                />
+              )}
             >
               <LabelList 
                 dataKey="revenue" 
                 position="top" 
-                formatter={formatCurrency}
-                fill="#ff7300"
-                offset={10}
-              />
-            </Line>
-            <Line 
-              type="monotone" 
-              dataKey="projection" 
-              name="Projected Revenue" 
-              stroke="#ff0000"
-              strokeWidth={2}
-              dot={{ strokeWidth: 2 }}
-            >
-              <LabelList 
-                dataKey="projection" 
-                position="top" 
-                formatter={formatCurrency}
-                fill="#ff0000"
+                formatter={formatLabel}
                 offset={10}
               />
             </Line>
