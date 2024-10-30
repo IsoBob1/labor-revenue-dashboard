@@ -68,6 +68,7 @@ export default function ServiceAnalysis() {
               angle={-45} 
               textAnchor="end"
               height={60}
+              interval={2}
             />
             <YAxis 
               yAxisId="left"
