@@ -14,12 +14,6 @@ const data = [
 
 export default function Home() {
   const formatCurrency = (value) => `$${value.toLocaleString()}`;
-  const formatLabel = (value, entry) => {
-    if (entry.payload.week === '3/11') {
-      return <tspan style={{ fill: '#ff0000' }}>${value.toLocaleString()}</tspan>;
-    }
-    return <tspan style={{ fill: '#ff7300' }}>${value.toLocaleString()}</tspan>;
-  };
 
   return (
     <Layout>
@@ -47,21 +41,12 @@ export default function Home() {
               name="Revenue" 
               stroke="#ff7300"
               strokeWidth={2}
-              dot={(props) => (
-                <circle
-                  cx={props.cx}
-                  cy={props.cy}
-                  r={4}
-                  fill={props.payload.week === '3/11' ? '#ff0000' : '#ff7300'}
-                  stroke={props.payload.week === '3/11' ? '#ff0000' : '#ff7300'}
-                  strokeWidth={2}
-                />
-              )}
             >
               <LabelList 
                 dataKey="revenue" 
-                position="top" 
-                formatter={formatLabel}
+                position="top"
+                formatter={formatCurrency}
+                fill="#ff7300"
                 offset={10}
               />
             </Line>
