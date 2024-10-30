@@ -9,11 +9,16 @@ const data = [
   { week: '13/10', barLabor: 1259, floorLabor: 3799, revenue: 26139 },
   { week: '20/10', barLabor: 1272, floorLabor: 2843, revenue: 24238 },
   { week: '27/10', barLabor: 1126, floorLabor: 2504, revenue: 19470 },
-  { week: '3/11', revenue: 17900 }
+  { week: '3/11', revenue: 17900, isProjected: true }
 ];
 
 export default function Home() {
-  const formatCurrency = (value) => `$${value.toLocaleString()}`;
+  const formatCurrency = (value, entry) => {
+    const formattedValue = `$${value.toLocaleString()}`;
+    return entry && entry.payload.isProjected ? 
+      `${formattedValue} (Projected Revenue)` : 
+      formattedValue;
+  };
 
   return (
     <Layout>
@@ -41,12 +46,24 @@ export default function Home() {
               name="Revenue" 
               stroke="#ff7300"
               strokeWidth={2}
+              dot={(props) => {
+                const isProjected = props.payload.isProjected;
+                return (
+                  <circle
+                    cx={props.cx}
+                    cy={props.cy}
+                    r={4}
+                    fill={isProjected ? '#ff0000' : '#ff7300'}
+                    stroke={isProjected ? '#ff0000' : '#ff7300'}
+                  />
+                );
+              }}
             >
               <LabelList 
                 dataKey="revenue" 
                 position="top"
                 formatter={formatCurrency}
-                fill="#ff7300"
+                fill={(entry) => entry.isProjected ? '#ff0000' : '#ff7300'}
                 offset={10}
               />
             </Line>
