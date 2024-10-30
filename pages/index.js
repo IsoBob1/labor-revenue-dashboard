@@ -29,11 +29,11 @@ export default function Home() {
             />
             <Tooltip formatter={formatCurrency} />
             <Legend />
+          <Bar dataKey="floorLabor" name="Floor Labor" stackId="labor" fill="#82ca9d">
+              <LabelList dataKey="floorLabor" position="inside" formatter={formatCurrency} fill="white" />
+            </Bar>
             <Bar dataKey="barLabor" name="Bar Labor" stackId="labor" fill="#8884d8">
               <LabelList dataKey="barLabor" position="inside" formatter={formatCurrency} fill="white" />
-            </Bar>
-            <Bar dataKey="floorLabor" name="Floor Labor" stackId="labor" fill="#82ca9d">
-              <LabelList dataKey="floorLabor" position="inside" formatter={formatCurrency} fill="white" />
             </Bar>
             <Line 
               type="monotone" 
