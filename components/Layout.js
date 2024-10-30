@@ -8,9 +8,10 @@ const Layout = ({ children }) => {
 const menuItems = [
     { path: '/', label: 'Revenue vs Labor' },
     { path: '/service', label: 'Frenchie Thursday 24th Oct - FOH Staff Analysis' },
-    { path: '/service-friday', label: 'Frenchie Friday 25th Oct - FOH Staff Analysis' }
+    { path: '/service-friday', label: 'Frenchie Friday 25th Oct - FOH Staff Analysis' },
+    { path: '/service-saturday', label: 'Frenchie Saturday 26th Oct - FOH Staff Analysis' }
   ];
-
+  
   return (
     <div style={{ 
       display: 'flex', 
