@@ -79,11 +79,11 @@ export default function AlfiesThursday() {
               yAxisId="left"
               type="monotone"
               dataKey="covers"
+              name="Covers in Venue" 
               stroke="#8884d8"
               strokeWidth={3}
-              dot={{ r: 4 }}
-              name="Covers in Venue"
-              />
+              dot={{ r: 3 }}
+            />
             </Line>
           </ComposedChart>
         </ResponsiveContainer>
