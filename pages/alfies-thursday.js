@@ -84,7 +84,6 @@ export default function AlfiesThursday() {
               strokeWidth={3}
               dot={{ r: 3 }}
             />
-            </Line>
           </ComposedChart>
         </ResponsiveContainer>
       </div>
