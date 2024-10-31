@@ -9,7 +9,8 @@ const menuItems = [
     { path: '/', label: 'Frenchie Revenue vs Labor' },
     { path: '/service', label: 'Frenchie Thursday 24th Oct - FOH Staff Analysis' },
     { path: '/service-friday', label: 'Frenchie Friday 25th Oct - FOH Staff Analysis' },
-    { path: '/service-saturday', label: 'Frenchie Saturday 26th Oct - FOH Staff Analysis' }
+    { path: '/service-saturday', label: 'Frenchie Saturday 26th Oct - FOH Staff Analysis' },
+    { path: '/alfies', label: 'Alfies Revenue vs Labor' }
   ];
   
   return (
