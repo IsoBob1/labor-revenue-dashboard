@@ -12,7 +12,8 @@ const menuItems = [
     { path: '/service-saturday', label: 'Frenchie Saturday 26th Oct - FOH Staff Analysis' },
     { path: '/alfies', label: 'Alfies Revenue vs Labor' },
     { path: '/alfies-thursday', label: 'Alfies Thursday 24th Oct - FOH Staff Analysis' },
-    { path: '/alfies-friday', label: 'Alfies Friday 25th Oct - FOH Staff Analysis' }
+    { path: '/alfies-friday', label: 'Alfies Friday 25th Oct - FOH Staff Analysis' },
+    { path: '/alfies-saturday', label: 'Alfies Saturday 26th Oct - FOH Staff Analysis' }
   ];
   
   return (
