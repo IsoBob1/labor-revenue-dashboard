@@ -3,50 +3,56 @@ import Layout from '../components/Layout';
 import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
-  { time: '12:00', floorStaff: 0, barStaff: 0, covers: 8 },
-  { time: '12:15', floorStaff: 0, barStaff: 0, covers: 8 },
-  { time: '12:30', floorStaff: 0, barStaff: 0, covers: 15 },
-  { time: '12:45', floorStaff: 0, barStaff: 0, covers: 18 },
-  { time: '13:00', floorStaff: 0, barStaff: 0, covers: 20 },
-  { time: '13:15', floorStaff: 0, barStaff: 0, covers: 22 },
-  { time: '13:30', floorStaff: 0, barStaff: 0, covers: 25 },
-  { time: '13:45', floorStaff: 0, barStaff: 0, covers: 25 },
-  { time: '14:00', floorStaff: 1, barStaff: 0, covers: 10 }, // Abby starts
-  { time: '14:15', floorStaff: 1, barStaff: 0, covers: 10 },
-  { time: '14:30', floorStaff: 1, barStaff: 0, covers: 10 },
-  { time: '14:45', floorStaff: 1, barStaff: 0, covers: 10 },
-  { time: '15:00', floorStaff: 1, barStaff: 1, covers: 2 }, // Olivia starts
-  { time: '15:15', floorStaff: 1, barStaff: 1, covers: 0 },
-  { time: '15:30', floorStaff: 1, barStaff: 1, covers: 0 },
-  { time: '15:45', floorStaff: 1, barStaff: 1, covers: 0 },
-  { time: '16:00', floorStaff: 1, barStaff: 1, covers: 0 },
-  { time: '16:15', floorStaff: 1, barStaff: 1, covers: 0 },
-  { time: '16:30', floorStaff: 1, barStaff: 1, covers: 2 },
-  { time: '16:45', floorStaff: 1, barStaff: 1, covers: 2 },
-  { time: '17:00', floorStaff: 2, barStaff: 1, covers: 8 }, // Alli starts
+  { time: '11:00', floorStaff: 0, barStaff: 0, covers: 0 },
+  { time: '11:15', floorStaff: 0, barStaff: 1, covers: 0 }, // Olivia starts
+  { time: '11:30', floorStaff: 1, barStaff: 1, covers: 0 }, // Abby starts
+  { time: '11:45', floorStaff: 1, barStaff: 1, covers: 0 },
+  { time: '12:00', floorStaff: 2, barStaff: 1, covers: 8 }, // Sarah starts
+  { time: '12:15', floorStaff: 2, barStaff: 1, covers: 8 },
+  { time: '12:30', floorStaff: 2, barStaff: 1, covers: 15 },
+  { time: '12:45', floorStaff: 2, barStaff: 1, covers: 18 },
+  { time: '13:00', floorStaff: 2, barStaff: 1, covers: 20 },
+  { time: '13:15', floorStaff: 2, barStaff: 1, covers: 22 },
+  { time: '13:30', floorStaff: 2, barStaff: 1, covers: 25 },
+  { time: '13:45', floorStaff: 2, barStaff: 1, covers: 25 },
+  { time: '14:00', floorStaff: 2, barStaff: 1, covers: 10 },
+  { time: '14:15', floorStaff: 2, barStaff: 1, covers: 10 },
+  { time: '14:30', floorStaff: 2, barStaff: 1, covers: 10 },
+  { time: '14:45', floorStaff: 2, barStaff: 1, covers: 10 },
+  { time: '15:00', floorStaff: 2, barStaff: 1, covers: 2 },
+  { time: '15:15', floorStaff: 2, barStaff: 1, covers: 0 },
+  { time: '15:30', floorStaff: 2, barStaff: 1, covers: 0 },
+  { time: '15:45', floorStaff: 2, barStaff: 1, covers: 0 },
+  { time: '16:00', floorStaff: 2, barStaff: 1, covers: 0 },
+  { time: '16:15', floorStaff: 2, barStaff: 1, covers: 0 },
+  { time: '16:30', floorStaff: 2, barStaff: 1, covers: 2 },
+  { time: '16:45', floorStaff: 2, barStaff: 1, covers: 2 },
+  { time: '17:00', floorStaff: 2, barStaff: 1, covers: 8 },
   { time: '17:15', floorStaff: 2, barStaff: 1, covers: 13 },
-  { time: '17:30', floorStaff: 2, barStaff: 1, covers: 25 },
-  { time: '17:45', floorStaff: 2, barStaff: 1, covers: 31 },
-  { time: '18:00', floorStaff: 4, barStaff: 1, covers: 35 }, // Edie and Neve start
+  { time: '17:30', floorStaff: 3, barStaff: 1, covers: 25 }, // Alli starts
+  { time: '17:45', floorStaff: 3, barStaff: 1, covers: 31 },
+  { time: '18:00', floorStaff: 4, barStaff: 1, covers: 35 }, // Edie starts
   { time: '18:15', floorStaff: 4, barStaff: 1, covers: 35 },
   { time: '18:30', floorStaff: 4, barStaff: 1, covers: 45 },
   { time: '18:45', floorStaff: 4, barStaff: 1, covers: 45 },
   { time: '19:00', floorStaff: 4, barStaff: 1, covers: 39 },
   { time: '19:15', floorStaff: 4, barStaff: 1, covers: 36 },
   { time: '19:30', floorStaff: 4, barStaff: 1, covers: 48 },
-  { time: '19:45', floorStaff: 4, barStaff: 0, covers: 42 }, // Olivia ends
-  { time: '20:00', floorStaff: 3, barStaff: 0, covers: 54 }, // Neve ends
-  { time: '20:15', floorStaff: 3, barStaff: 0, covers: 50 },
-  { time: '20:30', floorStaff: 3, barStaff: 0, covers: 39 },
-  { time: '20:45', floorStaff: 3, barStaff: 0, covers: 39 },
-  { time: '21:00', floorStaff: 3, barStaff: 0, covers: 39 },
-  { time: '21:15', floorStaff: 3, barStaff: 0, covers: 20 },
-  { time: '21:30', floorStaff: 3, barStaff: 0, covers: 20 },
-  { time: '21:45', floorStaff: 2, barStaff: 0, covers: 8 }, // Edie ends
-  { time: '22:00', floorStaff: 1, barStaff: 0, covers: 8 }, // Alli ends
-  { time: '22:15', floorStaff: 1, barStaff: 0, covers: 2 },
-  { time: '22:30', floorStaff: 0, barStaff: 0, covers: 0 }, // Abby ends
-  { time: '22:45', floorStaff: 0, barStaff: 0, covers: 0 }
+  { time: '19:45', floorStaff: 4, barStaff: 1, covers: 42 },
+  { time: '20:00', floorStaff: 4, barStaff: 1, covers: 54 },
+  { time: '20:15', floorStaff: 4, barStaff: 1, covers: 50 },
+  { time: '20:30', floorStaff: 4, barStaff: 1, covers: 39 },
+  { time: '20:45', floorStaff: 4, barStaff: 1, covers: 39 },
+  { time: '21:00', floorStaff: 4, barStaff: 1, covers: 39 },
+  { time: '21:15', floorStaff: 4, barStaff: 1, covers: 20 },
+  { time: '21:30', floorStaff: 3, barStaff: 1, covers: 20 }, // Alli ends
+  { time: '21:45', floorStaff: 3, barStaff: 1, covers: 8 },
+  { time: '22:00', floorStaff: 3, barStaff: 1, covers: 8 },
+  { time: '22:15', floorStaff: 3, barStaff: 1, covers: 2 },
+  { time: '22:30', floorStaff: 2, barStaff: 1, covers: 0 }, // Abby ends
+  { time: '22:45', floorStaff: 1, barStaff: 1, covers: 0 }, // Sarah & Edie end
+  { time: '23:00', floorStaff: 0, barStaff: 1, covers: 0 },
+  { time: '23:15', floorStaff: 0, barStaff: 0, covers: 0 }  // Olivia ends
 ];
 
 export default function AlfiesFriday() {
@@ -111,9 +117,9 @@ export default function AlfiesFriday() {
               let backgroundColor = 'white';
               
               if (totalStaff && row.covers === 0) {
-                backgroundColor = '#fff3e0'; // Orange for staff but no covers
+                backgroundColor = '#fff3e0';
               } else if (coversPerStaff > 20) {
-                backgroundColor = '#ffebee'; // Red for high covers per staff
+                backgroundColor = '#ffebee';
               }
 
               return (
