@@ -3,7 +3,44 @@ import Layout from '../components/Layout';
 import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
-  // ... (keep all your existing data points)
+  { time: '13:00', floorStaff: 0, barStaff: 0, covers: 0 },
+  { time: '13:15', floorStaff: 1, barStaff: 0, covers: 0 }, // Abby starts
+  { time: '13:30', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '13:45', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '14:00', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '14:15', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '14:30', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '14:45', floorStaff: 1, barStaff: 0, covers: 0 },
+  { time: '15:00', floorStaff: 1, barStaff: 1, covers: 0 }, // Olivia starts
+  { time: '15:15', floorStaff: 1, barStaff: 1, covers: 0 },
+  { time: '15:30', floorStaff: 1, barStaff: 1, covers: 0 },
+  { time: '15:45', floorStaff: 1, barStaff: 1, covers: 0 },
+  { time: '16:00', floorStaff: 1, barStaff: 1, covers: 0 },
+  { time: '16:15', floorStaff: 2, barStaff: 1, covers: 0 }, // Ronnie starts
+  { time: '16:30', floorStaff: 2, barStaff: 1, covers: 0 },
+  { time: '16:45', floorStaff: 2, barStaff: 1, covers: 0 },
+  { time: '17:00', floorStaff: 2, barStaff: 1, covers: 3 },
+  { time: '17:15', floorStaff: 2, barStaff: 1, covers: 3 },
+  { time: '17:30', floorStaff: 3, barStaff: 1, covers: 7 }, // Alli starts
+  { time: '17:45', floorStaff: 3, barStaff: 1, covers: 11 },
+  { time: '18:00', floorStaff: 5, barStaff: 1, covers: 24 }, // Rose and Sarah start
+  { time: '18:15', floorStaff: 5, barStaff: 1, covers: 26 },
+  { time: '18:30', floorStaff: 5, barStaff: 1, covers: 43 },
+  { time: '18:45', floorStaff: 5, barStaff: 1, covers: 49 },
+  { time: '19:00', floorStaff: 5, barStaff: 1, covers: 47 },
+  { time: '19:15', floorStaff: 5, barStaff: 1, covers: 43 },
+  { time: '19:30', floorStaff: 4, barStaff: 1, covers: 35 }, // Ronnie ends
+  { time: '19:45', floorStaff: 4, barStaff: 1, covers: 30 },
+  { time: '20:00', floorStaff: 4, barStaff: 1, covers: 28 },
+  { time: '20:15', floorStaff: 4, barStaff: 1, covers: 12 },
+  { time: '20:30', floorStaff: 4, barStaff: 1, covers: 12 },
+  { time: '20:45', floorStaff: 4, barStaff: 1, covers: 4 },
+  { time: '21:00', floorStaff: 4, barStaff: 1, covers: 4 },
+  { time: '21:15', floorStaff: 3, barStaff: 0, covers: 2 }, // Olivia ends
+  { time: '21:30', floorStaff: 2, barStaff: 0, covers: 2 }, // Abby & Rose end
+  { time: '21:45', floorStaff: 2, barStaff: 0, covers: 0 },
+  { time: '22:00', floorStaff: 1, barStaff: 0, covers: 0 }, // Sarah ends
+  { time: '22:15', floorStaff: 0, barStaff: 0, covers: 0 } // Alli ends
 ];
 
 export default function AlfiesThursday() {
