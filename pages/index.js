@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <h1 style={{ marginBottom: '20px' }}>Revenue vs Labor Dashboard</h1>
+      <h1 style={{ marginBottom: '20px' }}>Frenchie Revenue vs Labor Dashboard</h1>
       <div style={{ height: '500px', width: '100%' }}>
         <ResponsiveContainer>
           <ComposedChart data={data}>
