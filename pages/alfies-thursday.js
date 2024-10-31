@@ -75,7 +75,7 @@ export default function AlfiesThursday() {
             <Legend />
             <Bar yAxisId="right" dataKey="floorStaff" stackId="staff" name="Floor Staff" fill="#82ca9d" />
             <Bar yAxisId="right" dataKey="barStaff" stackId="staff" name="Bar Staff" fill="#ffc658" />
-            <Line 
+           <Line 
               yAxisId="left"
               type="monotone"
               dataKey="covers"
@@ -83,11 +83,6 @@ export default function AlfiesThursday() {
               strokeWidth={3}
               dot={{ r: 4 }}
               name="Covers in Venue"
-            >
-              <LabelList 
-                dataKey="covers"
-                position="top"
-                offset={10}
               />
             </Line>
           </ComposedChart>
