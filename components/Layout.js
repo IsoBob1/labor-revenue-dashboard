@@ -125,6 +125,27 @@ const Layout = ({ children }) => {
                 {venue.mainLink.label}
               </Link>
 
+              {/* Comparisons */}
+              {venue.comparisons && venue.comparisons.map((comparison) => (
+                <Link 
+                  key={comparison.path}
+                  href={comparison.path}
+                  style={{
+                    display: 'block',
+                    padding: '10px',
+                    marginBottom: '5px',
+                    backgroundColor: router.pathname === comparison.path ? '#333' : 'transparent',
+                    color: 'white',
+                    textDecoration: 'none',
+                    borderRadius: '4px',
+                    marginLeft: '10px',
+                    ...textStyles
+                  }}
+                >
+                  {comparison.label}
+                </Link>
+              ))}
+
               {/* Weekly Sections */}
               {Object.entries(venue.weeks).map(([weekKey, week]) => (
                 <div key={weekKey}>
