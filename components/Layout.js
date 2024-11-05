@@ -41,6 +41,9 @@ const Layout = ({ children }) => {
     frenchie: {
       label: 'Frenchie',
       mainLink: { path: '/', label: 'Revenue vs Labor' },
+      comparisons: [
+        { path: '/frenchie-thursday-comparison', label: 'Thursday Comparison' }
+      ],
       weeks: {
         'frenchie-oct24': {
           label: 'Week of Oct 24-26',
