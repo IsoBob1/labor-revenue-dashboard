@@ -10,6 +10,26 @@ const Layout = ({ children }) => {
     'alfies-oct24': false
   });
 
+  // Common font style to be used throughout
+  const baseFont = {
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+  };
+
+  // Common text styles
+  const textStyles = {
+    ...baseFont,
+    fontSize: '14px',
+    fontWeight: '400'
+  };
+
+  // Header text styles
+  const headerStyles = {
+    ...baseFont,
+    fontSize: '14px',
+    fontWeight: '600',
+    textTransform: 'uppercase',
+  };
+
   const toggleSection = (section) => {
     setExpandedSections({
       ...expandedSections,
@@ -55,24 +75,30 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh' }}>
+    <div style={{ ...baseFont, display: 'flex', minHeight: '100vh' }}>
       <div style={{ 
         width: '250px', 
         backgroundColor: '#1a1a1a', 
         padding: '20px',
-        color: 'white'
+        color: 'white',
+        ...baseFont
       }}>
-        <h2 style={{ marginBottom: '20px', color: 'white' }}>Dashboard</h2>
+        <h2 style={{ 
+          ...headerStyles, 
+          marginBottom: '20px', 
+          color: 'white',
+          fontSize: '16px'
+        }}>
+          Dashboard
+        </h2>
         <nav>
           {Object.entries(menuStructure).map(([key, venue]) => (
-            <div key={key}>
+            <div key={key} style={textStyles}>
               {/* Venue Header */}
               <div style={{ 
                 padding: '10px 0',
                 color: '#666',
-                fontWeight: 'bold',
-                fontSize: '0.9em',
-                textTransform: 'uppercase',
+                ...headerStyles,
                 marginTop: '20px'
               }}>
                 {venue.label}
@@ -90,7 +116,7 @@ const Layout = ({ children }) => {
                   textDecoration: 'none',
                   borderRadius: '4px',
                   marginLeft: '10px',
-                  fontSize: '0.9em'
+                  ...textStyles
                 }}
               >
                 {venue.mainLink.label}
@@ -112,7 +138,7 @@ const Layout = ({ children }) => {
                       border: 'none',
                       cursor: 'pointer',
                       marginLeft: '10px',
-                      fontSize: '0.9em'
+                      ...textStyles
                     }}
                   >
                     {expandedSections[weekKey] ? '▼' : '▶'} {week.label}
@@ -132,7 +158,7 @@ const Layout = ({ children }) => {
                             color: 'white',
                             textDecoration: 'none',
                             borderRadius: '4px',
-                            fontSize: '0.85em'
+                            ...textStyles
                           }}
                         >
                           {item.label}
@@ -147,7 +173,7 @@ const Layout = ({ children }) => {
         </nav>
       </div>
 
-      <div style={{ flex: 1, padding: '20px' }}>
+      <div style={{ flex: 1, padding: '20px', ...baseFont }}>
         {children}
       </div>
     </div>
